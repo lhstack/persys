@@ -1,0 +1,937 @@
+
+@media screen and (max-width: 1023px){
+    .visible-middle-screen{
+        display: block;
+    }
+    .visible-phone-display-screen{
+        display: none;
+    }
+    .visible-middle-screen-hide{
+        display: none;
+    }
+    .visible-max-screen{
+        display: none;
+    }
+    .visible-max-middle-screen{
+        display: none;
+    }
+    .visible-max-max-screen{
+        display: none;
+    }
+
+    .f-bg{
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+    }
+    body,html{
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .header > img:nth-child(1){
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+    }
+    .header > div:nth-child(2){
+        position: absolute;
+        top: 0;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 100%;
+    }
+    .header > div:nth-child(2) > img{
+        border-radius: 100%;
+        width: 25px;
+        height: 25px;
+        margin-left: 2vw;
+    }
+    .header > span:nth-child(3){
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        text-align: center;
+        color: #fff;
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .f-form-input{
+        width: 100%;
+        position: absolute;
+        height: 160px;
+        top: 80px;
+    }
+    .f-input{
+        width: 80%;
+        height: 45px;
+        padding-left: 3vw;
+        margin-left: 10%;
+        margin-top: 20px;
+        border-left: none;
+        border-top: none;
+        border-right: none;
+    }
+    .f-info{
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+        color: goldenrod;
+    }
+    .f-form-valid{
+        position: absolute;
+        top: 360px;
+        width: 100%;
+    }
+    .f-form-valid > input{
+        width: 59%;
+        height: 45px;
+        padding-left: 3vw;
+        margin-left: 10%;
+        border-left: none;
+        border-top: none;
+        border-right: none;
+    }
+    .f-form-valid > img{
+        width: 20%;
+        height: 45px;
+        border-radius: 5px;
+    }
+    .f-form-other{
+        position: absolute;
+        top: 415px;
+        width: 80%;
+        margin-left: 10%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .f-form-button{
+        position: absolute;
+        top: 480px;
+        height: 40px;
+        width: 80%;
+        margin-left: 10%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .f-form-button > button{
+        width: 100%;
+        height: 40px;
+        font-size: 20px;
+        border: none;
+        background: #17afdc;
+        color: #fff;
+        border-radius: 5px;
+    }
+    .f-form-button > button:hover,button:active{
+        background: #0f9c0d;
+    }
+    .f-footer{
+        position: absolute;
+        bottom: 30px;
+        width: 80%;
+        margin-left: 10%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+@media screen and (min-width: 1024px){
+    .visible-middle-screen{
+        display: none;
+    }
+    .visible-max-screen{
+        display: block;
+    }
+    .visible-max-middle-screen{
+        display: none;
+    }
+    .visible-max-max-screen{
+        display: none;
+    }
+    .f-bg{
+        width: 380px;
+        height: 420px;
+        background: #0e4352a8;
+        position: absolute;
+        left: 50%;
+        margin-left: -190px;
+        top: 80px;
+        border-radius: 2px;
+    }
+    .header{
+        width: 100%;
+        height: 30px;
+    }
+    .header > span{
+        position: absolute;
+        width: 100%;
+        top:0;
+        left:0;
+        height: 35px;
+        text-align: center;
+        font-family: "微软雅黑";
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: white;
+        font-size: 14px;
+    }
+    .header > img{
+        position: absolute;
+        width: 100%;
+        top:0;
+        left:0;
+        height: 35px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+    }
+    .f-info{
+        position: absolute;
+        width: 100%;
+        top:0;
+        left:0;
+        height: 30px;
+        text-align: center;
+        color: #ef8808;
+        font-size: 14px;
+        top: 50px;
+    }
+    .f-form-input{
+        height: 200px;
+        width: 100%;
+    }
+    .f-form-input > label:nth-child(1){
+        position: absolute;
+        left: 5%;
+        width: 20%;
+        height: 40px;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        top: 70px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+    }
+    .f-form-input > input:nth-child(2){
+        position: absolute;
+        left: 25%;
+        width: 70%;
+        height: 40px;
+        border-radius: 5px;
+        display: flex;
+        top: 70px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+        padding-left: 15px;
+    }
+    .f-form-input > label:nth-child(3){
+        position: absolute;
+        left: 5%;
+        width: 20%;
+        height: 40px;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        top: 120px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+    }
+    .f-form-input > input:nth-child(4){
+        position: absolute;
+        left: 25%;
+        width: 70%;
+        height: 40px;
+        border-radius: 5px;
+        display: flex;
+        top: 120px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+        padding-left: 15px;
+    }
+    .f-form-input > label:nth-child(5){
+        position: absolute;
+        left: 5%;
+        width: 20%;
+        height: 40px;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        top: 170px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+    }
+    .f-form-input > input:nth-child(6){
+        position: absolute;
+        left: 25%;
+        width: 70%;
+        height: 40px;
+        border-radius: 5px;
+        display: flex;
+        top: 170px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+        padding-left: 15px;
+    }
+    .f-form-input > label:nth-child(7){
+        position: absolute;
+        left: 5%;
+        width: 20%;
+        height: 40px;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        top: 220px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+    }
+    .f-form-input > input:nth-child(8){
+        position: absolute;
+        left: 25%;
+        width: 70%;
+        height: 40px;
+        border-radius: 5px;
+        display: flex;
+        top: 220px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+        padding-left: 15px;
+    }
+    .f-form-valid{
+        position: absolute;
+        top: 270px;
+        width: 100%;
+    }
+    .f-form-valid > input:nth-child(1){
+        position: absolute;
+        left: 5%;
+        width: 60%;
+        height: 40px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        text-align: left;
+        background: #fff;
+        padding-left: 20px;
+    }
+    .f-form-valid > img:nth-child(2){
+        position: absolute;
+        left: 65%;
+        width: 30%;
+        height: 40px;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+    }
+    .f-form-other{
+        width: 90%;
+        left: 5%;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 85px;
+    }
+    .f-form-other > a{
+        cursor: pointer;
+    }
+    .f-form-button{
+        width: 90%;
+        position: absolute;
+        left: 5%;
+        margin-top: 120px;
+    }
+    .f-form-button > button{
+        width: 100%;
+        height: 40px;
+        font-size: 15px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        color: white;
+        background: #09aaff;
+    }
+    .f-form-button > button:hover{
+        color: white;
+        background: #028c66;
+        transition: 2s all;
+    }
+    .f-boty-footer{
+        position: absolute;
+        bottom: 10px;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        width: 96%;
+        left: 2%;
+        border-top: 1px solid gray;
+    }
+    .f-boty-footer >a{
+        cursor: pointer;
+    }
+    .f-img-bg{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+@media(min-width: 1366px){
+    .visible-min-screen{
+        display: none;
+    }
+    .visible-middle-screen{
+        display: none;
+    }
+    .visible-max-screen{
+        display: none;
+    }
+    .visible-max-middle-screen{
+        display: block;
+    }
+    .visible-max-max-screen{
+        display: none;
+    }
+    .f-bg{
+        width: 380px;
+        height: 420px;
+        background: #0e4352a8;
+        position: absolute;
+        left: 50%;
+        margin-left: -190px;
+        top: 160px;
+        border-radius: 2px;
+    }
+    .header{
+        width: 100%;
+        height: 30px;
+    }
+    .header > span{
+        position: absolute;
+        width: 100%;
+        top:0;
+        left:0;
+        height: 35px;
+        text-align: center;
+        font-family: "微软雅黑";
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: white;
+        font-size: 14px;
+    }
+    .header > img{
+        position: absolute;
+        width: 100%;
+        top:0;
+        left:0;
+        height: 35px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+    }
+    .f-info{
+        position: absolute;
+        width: 100%;
+        top:0;
+        left:0;
+        height: 30px;
+        text-align: center;
+        color: #ef8808;
+        font-size: 14px;
+        top: 50px;
+    }
+    .f-form-input{
+        height: 200px;
+        width: 100%;
+    }
+    .f-form-input > label:nth-child(1){
+        position: absolute;
+        left: 5%;
+        width: 20%;
+        height: 40px;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        top: 70px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+    }
+    .f-form-input > input:nth-child(2){
+        position: absolute;
+        left: 25%;
+        width: 70%;
+        height: 40px;
+        border-radius: 5px;
+        display: flex;
+        top: 70px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+        padding-left: 15px;
+    }
+    .f-form-input > label:nth-child(3){
+        position: absolute;
+        left: 5%;
+        width: 20%;
+        height: 40px;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        top: 120px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+    }
+    .f-form-input > input:nth-child(4){
+        position: absolute;
+        left: 25%;
+        width: 70%;
+        height: 40px;
+        border-radius: 5px;
+        display: flex;
+        top: 120px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+        padding-left: 15px;
+    }
+    .f-form-input > label:nth-child(5){
+        position: absolute;
+        left: 5%;
+        width: 20%;
+        height: 40px;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        top: 170px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+    }
+    .f-form-input > input:nth-child(6){
+        position: absolute;
+        left: 25%;
+        width: 70%;
+        height: 40px;
+        border-radius: 5px;
+        display: flex;
+        top: 170px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+        padding-left: 15px;
+    }
+    .f-form-input > label:nth-child(7){
+        position: absolute;
+        left: 5%;
+        width: 20%;
+        height: 40px;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        top: 220px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+    }
+    .f-form-input > input:nth-child(8){
+        position: absolute;
+        left: 25%;
+        width: 70%;
+        height: 40px;
+        border-radius: 5px;
+        display: flex;
+        top: 220px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+        padding-left: 15px;
+    }
+    .f-form-valid{
+        position: absolute;
+        top: 270px;
+        width: 100%;
+    }
+    .f-form-valid > input:nth-child(1){
+        position: absolute;
+        left: 5%;
+        width: 60%;
+        height: 40px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+        padding-left: 20px;
+    }
+    .f-form-valid > img:nth-child(2){
+        position: absolute;
+        left: 65%;
+        width: 30%;
+        height: 40px;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+    }
+    .f-form-other{
+        width: 90%;
+        left: 5%;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 85px;
+    }
+    .f-form-other > a{
+        cursor: pointer;
+        color: #6495ED;
+    }
+    .f-form-button{
+        width: 90%;
+        position: absolute;
+        left: 5%;
+        margin-top: 120px;
+    }
+    .f-form-button > button{
+        width: 100%;
+        height: 40px;
+        font-size: 15px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        color: white;
+        background: #00779a;
+    }
+    .f-form-button > button:hover{
+        color: white;
+        background: #028c66;
+        transition: 2s all;
+    }
+    .f-boty-footer{
+        position: absolute;
+        bottom: 10px;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        width: 96%;
+        left: 2%;
+        border-top: 1px solid gray;
+    }
+    .f-boty-footer >a{
+        cursor: pointer;
+    }
+    .f-img-bg{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+@media(min-width: 1720px){
+    .visible-min-screen{
+        display: none;
+    }
+    .visible-middle-screen{
+        display: none;
+    }
+    .visible-max-screen{
+        display: none;
+    }
+    .visible-max-middle-screen{
+        display: none;
+    }
+    .visible-max-max-screen{
+        display: block;
+    }
+    .f-bg{
+        width: 480px;
+        height: 520px;
+        background: #0e4352a8;
+        position: absolute;
+        left: 50%;
+        margin-left: -240px;
+        top: 230px;
+        border-radius: 2px;
+    }
+    .header{
+        width: 100%;
+        height: 35px;
+    }
+    .header > span{
+        position: absolute;
+        width: 100%;
+        top:0;
+        left:0;
+        height: 45px;
+        text-align: center;
+        font-family: "微软雅黑";
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: white;
+        font-size: 14px;
+    }
+    .header > img{
+        position: absolute;
+        width: 100%;
+        top:0;
+        left:0;
+        height: 45px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+    }
+    .f-info{
+        position: absolute;
+        width: 100%;
+        top:0;
+        left:0;
+        height: 40px;
+        text-align: center;
+        color: #ef8808;
+        font-size: 14px;
+        top: 70px;
+    }
+    .f-form-input{
+        height: 200px;
+        width: 100%;
+    }
+    .f-form-input > label:nth-child(1){
+        position: absolute;
+        left: 5%;
+        width: 20%;
+        height: 50px;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        top: 100px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+    }
+    .f-form-input > input:nth-child(2){
+        position: absolute;
+        left: 25%;
+        width: 70%;
+        height: 50px;
+        border-radius: 5px;
+        display: flex;
+        top: 100px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+        padding-left: 15px;
+    }
+    .f-form-input > label:nth-child(3){
+        position: absolute;
+        left: 5%;
+        width: 20%;
+        height: 50px;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        top: 160px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+    }
+    .f-form-input > input:nth-child(4){
+        position: absolute;
+        left: 25%;
+        width: 70%;
+        height: 50px;
+        border-radius: 5px;
+        display: flex;
+        top: 160px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+        padding-left: 15px;
+    }
+    .f-form-input > label:nth-child(5){
+        position: absolute;
+        left: 5%;
+        width: 20%;
+        height: 50px;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        top: 220px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+    }
+    .f-form-input > input:nth-child(6){
+        position: absolute;
+        left: 25%;
+        width: 70%;
+        height: 50px;
+        border-radius: 5px;
+        display: flex;
+        top: 220px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+        padding-left: 15px;
+    }
+    .f-form-input > label:nth-child(7){
+        position: absolute;
+        left: 5%;
+        width: 20%;
+        height: 50px;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        top: 280px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+    }
+    .f-form-input > input:nth-child(8){
+        position: absolute;
+        left: 25%;
+        width: 70%;
+        height: 50px;
+        border-radius: 5px;
+        display: flex;
+        top: 280px;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+        padding-left: 15px;
+    }
+    .f-form-valid{
+        position: absolute;
+        top: 340px;
+        width: 100%;
+    }
+    .f-form-valid > input:nth-child(1){
+        position: absolute;
+        left: 5%;
+        width: 60%;
+        height: 50px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+        padding-left: 20px;
+        text-align: left;
+    }
+    .f-form-valid > img:nth-child(2){
+        position: absolute;
+        left: 65%;
+        width: 30%;
+        height: 50px;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid gray;
+        background: #fff;
+    }
+    .f-form-other{
+        width: 90%;
+        left: 5%;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 160px;
+    }
+    .f-form-other > a{
+        cursor: pointer;
+        color: #6495ED;
+    }
+    .f-form-button{
+        width: 90%;
+        position: absolute;
+        left: 5%;
+        margin-top: 200px;
+    }
+    .f-form-button > button{
+        width: 100%;
+        height: 50px;
+        font-size: 15px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        color: white;
+        background: #09aaff;
+    }
+    .f-form-button > button:hover{
+        color: white;
+        background: #028c66;
+        transition: 2s all;
+    }
+    .f-boty-footer{
+        position: absolute;
+        bottom: 10px;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        width: 96%;
+        left: 2%;
+        border-top: 1px solid gray;
+    }
+    .f-boty-footer >a{
+        cursor: pointer;
+    }
+    .f-img-bg{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

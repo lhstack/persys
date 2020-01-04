@@ -1,0 +1,72 @@
+{
+  "id": "1500434",
+  "name": "权限",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "515253",
+      "name": "救命啊_help16",
+      "font_class": "jiumingahelp16",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
+      "icon_id": "1409640",
+      "name": "14权限管理",
+      "font_class": "quanxianguanli",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "1718359",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "3695417",
+      "name": "互联网",
+      "font_class": "hulianwang-",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "5383657",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e782",
+      "unicode_decimal": 59266
+    },
+    {
+      "icon_id": "7159323",
+      "name": "权限",
+      "font_class": "quanxian",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "7234593",
+      "name": "切换项目",
+      "font_class": "qiehuanxiangmu",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "8027266",
+      "name": "就业创业",
+      "font_class": "jiuyechuangye",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "9059899",
+      "name": "互联网汇聚",
+      "font_class": "hulianwanghuiju",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    }
+  ]
+}

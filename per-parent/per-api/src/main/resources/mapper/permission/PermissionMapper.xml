@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lhstack.mapper.permission.PermissionMapper">
+
+
+    <!--    根据菜单id删除关联权限-->
+    <delete id="deleteMenuAndPermissionByMid">
+        DELETE FROM tb_menu_and_permission WHERE mid = #{mid}
+    </delete>
+
+    <!--    根据菜单id和权限id关联权限-->
+    <insert id="insertMenuAndPermissionByMid">
+        <if test="mid != null and pids != null">
+            INSERT INTO tb_menu_and_permission(mid,pid) VALUES
+            <foreach collection="pids" item="pid" separator=",">
+                (#{mid},#{pid})
+            </foreach>
+        </if>
+    </insert>
+    <!--根据菜单id查询关联权限-->
+    <select id="findByMid" resultType="Permission">
+        SELECT tb_permission.* FROM tb_permission
+        LEFT JOIN tb_menu_and_permission
+        ON tb_permission.id = tb_menu_and_permission.pid
+        WHERE tb_menu_and_permission.mid = #{mid}
+    </select>
+
+    <!--根据rid查询权限-->
+    <select id="findByRid" resultType="Permission">
+        SELECT DISTINCT tb_permission.*
+          FROM tb_permission
+          LEFT JOIN tb_role_and_permission
+          ON tb_permission.id = tb_role_and_permission.pid
+          WHERE tb_role_and_permission.rid = #{rid}
+    </select>
+
+<!-- 根据id删除权限，角色关联表 -->
+    <delete id="deleteById">
+        DELETE tb_permission,tb_role_and_permission
+        FROM tb_permission,tb_role_and_permission
+        WHERE tb_permission.id = #{id}
+        AND tb_permission.id = tb_role_and_permission.pid
+    </delete>
+
+    <!--查询不包含超级管理员以及permissionName的权限-->
+    <select id="findAllByExistAdminAndRoles" resultType="Permission">
+        SELECT DISTINCT tb_permission.*
+          FROM tb_permission
+          LEFT JOIN tb_role_and_permission
+          ON tb_permission.id = tb_role_and_permission.pid
+          LEFT JOIN tb_role
+          ON tb_role.id = tb_role_and_permission.rid
+          OR tb_role_and_permission.rid IS NULL
+          <where>
+              tb_role.role_name &lt;&gt; 'ADMIN'
+              <if test="isAdmin == false or isAdmin == null">
+                  AND  (
+                  tb_permission.permission_name IS NULL
+                  OR
+                  tb_permission.permission_name NOT IN(
+                  <foreach collection="permissions" item="permissionName" separator=",">
+                      #{permissionName}
+                  </foreach>
+                  )
+                  )
+              </if>
+          </where>
+          ORDER BY tb_permission.permission_name ASC
+    </select>
+</mapper>

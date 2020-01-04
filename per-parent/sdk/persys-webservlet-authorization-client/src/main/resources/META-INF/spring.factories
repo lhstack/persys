@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.lhstack.authorization.autoconfig.PushControllerApiInfoToServerConfiguration,\
+  com.lhstack.authorization.autoconfig.DynAuthorityAspectAutoConfiguration,\
+  com.lhstack.authorization.autoconfig.PerSysSsoAutoConfiguration

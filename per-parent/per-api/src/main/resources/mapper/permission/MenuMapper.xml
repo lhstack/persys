@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lhstack.mapper.permission.MenuMapper">
+
+    <!-- 根据复杂条件查询菜单 -->
+   <select id="findAllMenuExample" resultType="Menu">
+       SELECT DISTINCT tb_menu.* FROM tb_menu
+       <choose>
+           <when test="isAdmin == false">
+               LEFT JOIN tb_menu_and_permission
+               ON tb_menu.id = tb_menu_and_permission.mid
+               LEFT JOIN tb_permission
+               ON tb_menu_and_permission.pid = tb_permission.id
+               <where>
+                   (
+                       <choose>
+                           <when test="permissions != null and permissions.size() > 0">
+                               tb_permission.permission_name IN (
+                               <foreach collection="permissions" item="name" separator=",">
+                                   #{name}
+                               </foreach>
+                               )
+                               OR tb_permission.permission_name IS NULL
+                           </when>
+                           <otherwise>
+                               tb_permission.permission_name IS NULL
+                           </otherwise>
+                       </choose>
+                   )
+                   AND tb_menu.parent_id = #{parentId}
+                   AND tb_menu.enable = true
+               </where>
+           </when>
+           <otherwise>
+               <where>
+                   tb_menu.parent_id = #{parentId}
+               </where>
+           </otherwise>
+       </choose>
+       ORDER BY sort_by DESC
+   </select>
+</mapper>

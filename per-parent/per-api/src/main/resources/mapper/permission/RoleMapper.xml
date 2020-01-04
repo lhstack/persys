@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lhstack.mapper.permission.RoleMapper">
+    <!--根据uid查询关联的角色-->
+    <select id="findByUid" resultType="Role">
+        SELECT DISTINCT tb_role.* FROM tb_role LEFT JOIN tb_user_and_role ON tb_role.id = tb_user_and_role.rid WHERE tb_user_and_role.uid = #{uid}
+    </select>
+
+    <!--删除uid关联的rids-->
+    <delete id="deleteByUserRids" parameterType="java.util.ArrayList">
+        DELETE FROM tb_user_and_role WHERE rid IN (
+          <foreach collection="list" separator="," item="role_id">
+              #{role_id}
+          </foreach>
+        )
+    </delete>
+
+    <!--查询不包含超级管理员以及roleNames-->
+    <select id="findAllByRoleNameNotIn" resultType="Role">
+        SELECT * FROM tb_role
+        <where>
+
+           <choose>
+               <when test="isAdmin == false or isAdmin == null">
+                   role_name NOT IN('ADMIN',
+                   <foreach collection="roleNames" item="roleName" separator=",">
+                       #{roleName}
+                   </foreach>
+                   )
+               </when>
+               <otherwise>
+                   role_name &lt;&gt; 'ADMIN'
+               </otherwise>
+           </choose>
+        </where>
+
+    </select>
+
+    <!--批量删除角色和角色关联权限的中间表数据-->
+    <delete id="deleteByRids">
+        DELETE tb_role,tb_role_and_permission
+        FROM tb_role
+        LEFT JOIN tb_role_and_permission
+        ON tb_role.id = tb_role_and_permission.rid
+        WHERE tb_role.id IN (
+        <foreach collection="list" item="id" separator=",">
+            #{id}
+        </foreach>
+        )
+    </delete>
+
+    <!--删除角色关联的权限中间表-->
+    <delete id="deleteByRoleAndPids">
+        DELETE FROM tb_role_and_permission WHERE rid = #{rid}
+    </delete>
+
+    <!--添加角色以及关联权限-->
+    <insert id="insertByRoleAndPids">
+        INSERT INTO tb_role_and_permission(pid,rid) VALUES
+        <foreach collection="pids" item="pid" separator=",">
+            (#{pid},#{rid})
+        </foreach>
+    </insert>
+
+
+    <resultMap id="roleAndPermissionMap" type="RoleAndPermissionVo">
+        <id column="role_id" property="role.id"></id>
+        <result column="r_icon" property="role.icon"></result>
+        <result column="rname" property="role.roleName"></result>
+        <result column="r_logogram_name" property="role.logogramName"></result>
+        <collection property="permissionList" select="com.lhstack.mapper.permission.PermissionMapper.findByRid" column="role_id" javaType="java.util.ArrayList" ofType="com.lhstack.entity.permission.Permission">
+            <id column="id" property="id"></id>
+            <result column="permission_name" property="permissionName"></result>
+            <result column="logogram_name" property="logogramName"></result>
+        </collection>
+    </resultMap>
+
+    <!--查询不包含超级管理员以及permissionName的角色-->
+    <select id="findAllByIgnoreNameAndNotExistAdmin" resultMap="roleAndPermissionMap">
+        SELECT
+        DISTINCT
+        role.logogram_name r_logogram_name,
+        role.icon r_icon,
+        role.id role_id,
+        role.role_name rname
+        FROM tb_role role
+        LEFT JOIN tb_role_and_permission
+        ON role.id = tb_role_and_permission.rid
+        LEFT JOIN tb_permission
+        ON tb_role_and_permission.pid = tb_permission.id
+        <where>
+            role.role_name &lt;&gt; 'ADMIN'
+            <if test="isAdmin == false or isAdmin == null">
+              AND (
+              tb_permission.permission_name IS NULL
+              OR
+              tb_permission.permission_name NOT IN(
+                <foreach collection="permissions" item="permissionName" separator=",">
+                    #{permissionName}
+                </foreach>
+                )
+                )
+            </if>
+        </where>
+        ORDER BY role.role_name ASC
+    </select>
+
+    <!--查询角色数量-->
+    <select id="findAllByIgnoreNameAndNotExistAdminCount" resultType="java.lang.String">
+        SELECT
+        role.role_name
+        FROM tb_role role
+        LEFT JOIN tb_role_and_permission
+        ON role.id = tb_role_and_permission.rid
+        LEFT JOIN tb_permission
+        ON tb_role_and_permission.pid = tb_permission.id
+        <where>
+            role.role_name &lt;&gt; 'ADMIN'
+            <if test="isAdmin == false or isAdmin == null">
+                AND (
+                tb_permission.permission_name IS NULL
+                OR
+                tb_permission.permission_name NOT IN(
+                <foreach collection="permissions" item="permissionName" separator=",">
+                    #{permissionName}
+                </foreach>
+                )
+                )
+            </if>
+        </where>
+    </select>
+
+    <!--根据uid删除用户与角色的关联信息-->
+    <delete id="deleteByUid">
+        DELETE FROM tb_user_and_role WHERE uid = #{uid}
+    </delete>
+
+    <!-- 根据uid关联角色 -->
+    <insert id="insertByRids">
+        INSERT INTO tb_user_and_role(uid,rid) VALUES
+        <foreach collection="rids" separator="," item="rid">
+            (#{id},#{rid})
+        </foreach>
+    </insert>
+</mapper>

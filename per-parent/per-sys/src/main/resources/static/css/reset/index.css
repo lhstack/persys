@@ -1,0 +1,198 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url("https://pmoe-sso.oss-cn-hangzhou.aliyuncs.com/timg.jpg");
+    background-size: 100% 100%;
+}
+.box{
+    margin: auto;
+    height: 350px;
+    width: 400px;
+    background: linear-gradient(to right,#3578f6,#48bffe);
+    background:-webkit-linear-gradient(left, #3578f6 , #48bffe);
+    background: -o-linear-gradient(left, #3578f6 , #48bffe);
+    background: -moz-linear-gradient(left, #3578f6 , #48bffe);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+}
+.box_msg{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    color: #c37837;
+    font-size: 14px;
+    height: 15px;
+}
+.box_header{
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 10px;
+}
+.box_input{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    height: 45px;
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.box_input_pass{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    height: 45px;
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.box_input_pass > label{
+    width: 25%;
+    text-align: center;
+    font-size: 14px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #aaa;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.box_input_pass:nth-child(4){
+    margin-top: 30px;
+}
+
+.box_input_pass > input{
+    width: 75%;
+    height: 45px;
+    font-size: 14px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+.box_input:nth-child(4){
+    margin-top: 30px;
+}
+.box_input > input{
+    width: 82%;
+    height: 45px;
+    font-size: 14px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+.box_input > label{
+    width: 18%;
+    text-align: center;
+    font-size: 14px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #aaa;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.box_input > div{
+    position: absolute;
+    right: 10px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box_footer_pass{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+}
+.box_footer_pass > button:active{
+    background: #aaa;
+    color: #1E9FFF;
+}
+.box_footer_pass > button{
+    width: 40%;
+    height: 45px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    background: #48c0fe;
+    opacity: .88;
+    color: #fff;
+}
+.box_input > div > button{
+    height: 30px;
+    width: 50px;
+    font-size: 13px;
+    border-radius: 3px;
+    border: 1px solid #aaa;
+    background: #cff7f3;
+}
+.box_input > div > button:active{
+    background: #3fa0fa;
+    color: #fff;
+}
+.box_other{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+.box_other > a{
+    font-size: 14px;
+}
+.box_footer{
+    height: 45px;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
+.box_footer > button{
+    width: 100%;
+    height: 45px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    background: #48c0fe;
+    opacity: .88;
+    color: #fff;
+}
+.box_footer > button:active{
+    background: #aaa;
+    color: #1E9FFF;
+}

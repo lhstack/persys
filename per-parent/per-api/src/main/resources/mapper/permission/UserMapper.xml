@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lhstack.mapper.permission.UserMapper">
+
+    <!--按条件查询不包含超级管理员和permissionName的角色-->
+    <select id="findByNotExistThisAndExample" resultType="User" parameterType="UserExampleDto">
+      SELECT DISTINCT tb_user.*
+        FROM tb_user
+        LEFT JOIN tb_user_and_role
+        ON tb_user.id = tb_user_and_role.uid
+        LEFT JOIN tb_role
+        ON tb_user_and_role.rid = tb_role.id
+        LEFT JOIN tb_role_and_permission
+        ON tb_role.id = tb_role_and_permission.rid
+        LEFT JOIN tb_permission
+        ON tb_permission.id = tb_role_and_permission.pid
+        WHERE tb_user.id &lt;&gt; #{userId}
+        <choose>
+            <when test="isAdmin == true">
+                AND (tb_role.role_name NOT IN(
+                <foreach collection="ignoreRoleNames" item="roleName" separator=",">
+                    #{roleName}
+                </foreach>
+                ) OR tb_role.role_name IS NULL)
+            </when>
+            <otherwise>
+                AND (tb_role.role_name NOT IN(
+                <foreach collection="ignoreRoleNames" item="roleName" separator=",">
+                    #{roleName}
+                </foreach>
+                )  OR tb_role.role_name IS NULL)
+                AND (tb_permission.permission_name NOT IN (
+                <foreach collection="ignorePermissionNames" item="permissionName" separator=",">
+                    #{permissionName}
+                </foreach>
+                ) OR tb_permission.permission_name IS NULL)
+            </otherwise>
+        </choose>
+        <trim suffixOverrides="AND">
+            <if test="search != null and search != ''">
+                  AND (
+                  tb_user.username LIKE CONCAT('%',#{search},'%')
+                  OR tb_user.nick_name LIKE CONCAT('%',#{search},'%')
+                  OR tb_user.email LIKE CONCAT('%',#{search},'%')
+                  )
+            </if>
+            <if test="startTime != null and endTime != null">
+                AND tb_user.create_time BETWEEN #{startTime} AND #{endTime}
+            </if>
+        </trim>
+        ORDER BY tb_user.id ASC
+    </select>
+
+    <!--根据uid删除用户以及关联角色中间表的数据-->
+    <delete id="deleteByIdAndRole">
+        DELETE tb_user,tb_user_and_role
+          FROM tb_user
+          LEFT JOIN tb_user_and_role
+          ON tb_user.id = tb_user_and_role.uid
+          WHERE tb_user.id = #{id}
+    </delete>
+
+    <!--批量删除user以及user_and_role-->
+    <delete id="deleteByIdsAndRole">
+        DELETE tb_user,tb_user_and_role
+          FROM tb_user
+          LEFT JOIN tb_user_and_role
+          ON tb_user.id = tb_user_and_role.uid
+          WHERE tb_user.id IN (
+            <foreach collection="list" separator="," item="id">
+                #{id}
+            </foreach>
+          )
+    </delete>
+</mapper>

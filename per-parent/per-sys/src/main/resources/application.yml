@@ -1,0 +1,93 @@
+remote:
+  sql:
+    monitory:
+      aes:
+        #远程监控sql数据加密签名
+        singingKey: ${REMOTE_SQL_MONITORY_AES_SINGING_KEY:asdf153zdg5212sg}
+persys:
+  version: 0.0.1
+  client:
+    authority:
+      singingKey: ${PERSYS_CLIENT_AUTHORITY_SINGING_KEY:sdfgasghhsdfghws}
+scheduler:
+  url: ${SCHEDULER_URL:localhost}
+  port: ${SCHEDULER_PORT:3306}
+  tb: ${SCHEDULER_tb:quartz}
+  scheduler_mysql_url: jdbc:mysql://${scheduler.url}:${scheduler.port}/${scheduler.tb}?useSSL=false&serverTimezone=GMT%2B8&character=UTF8&useUnicode=true&characterEncoding=UTF-8
+  scheduler_mysql_password: ${SCHEDULER_PASSWORD:123456}
+  scheduler_mysql_username: ${SCHEDULER_USERNAME:root}
+mongodb:
+  url: ${MONGODB_URL:localhost}
+  port: ${MONGODB_PORT:27017}
+  database: ${MONGODB_DATABASE:PermissionSys}
+  username: ${MONGODB_USERNAME:admin}
+  password: ${MONGODB_PASSWORD:123456}
+  enableFalse: mongodb://${mongodb.url}:${mongodb.port}/${mongodb.database}
+  enableTrue: mongodb://${mongodb.username}:${mongodb.password}@${mongodb.url}:${mongodb.port}/${mongodb.database}
+mysql:
+  url: ${MYSQL_URL:localhost}
+  #url: 192.168.188.132
+  port: ${MYSQL_PORT:3306}
+  #port: 30006
+  database: ${MYSQL_DATABASE:permission}
+  username: ${MYSQL_USERNAME:root}
+  password: ${MYSQL_PASSWORD:123456}
+redis:
+  host: ${REDIS_HOST:localhost}
+  port: ${REDIS_PORT:6379}
+  password: ${REDIS_PASSWORD:per_redis}
+admin:
+  username: ${ADMIN_USERNAME:admin}
+  password: ${ADMIN_PASSWORD:123456}
+  url: ${ADMIN_URL:localhost}
+  port: ${ADMIN_PORT:9876}
+  authUrl: http://${admin.url}:${admin.port}
+server:
+  port: ${SERVER_PORT:80}
+spring:
+  log:
+    path: ${LOG_PATH:F:/logback/v1}
+    external-file: ${LOG_EXTERNAL_FILE:F://logback/v1/all.log}
+  application:
+    name: ${APPLICATIONNAME:Permission Manager System}
+  profiles:
+    active: ${ACTIVE_ENV:test} #运行环境
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+  webflux:
+    date-format: yyyy-MM-dd HH:mm:ss
+  session:
+    redis:
+      cleanup-cron: 0 0 0 * * ?
+  freemarker:
+    cache: true
+    suffix: .ftl
+  cache:
+    type: redis
+    redis:
+      time-to-live: 7d
+  mail:
+    host: smtp.qq.com
+    username: <%username%>
+    password: <%password%>
+  datasource:
+    schema:
+    - classpath:sql/permission.sql
+    initialization-mode: <never|always>
+fastdfs:
+  http:
+    prefix: http://<hostname>:<port>/
+#security忽略不拦截配置
+ignore:
+  get: /login.html, /css/**,/js/**,/fonts/**,/images/**,/code,/actuator/**,/font/**,/page/registry,/sso/**,/error_info,/page/reset@index
+  post: /actuator/**,/user/reg,/sso/**,/user/changeSendValid/**,/mail/send/reset,/user/pass/reset/valid,/user/reset/pass,/oss/upload/**,/oss/multi/upload,/remote/sql/push,/remote/api/receive,/remote/api/check
+  delete: /oss/delete,/oss/deletes
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:/mapper/**/*.xml
+  type-aliases-package: com.lhstack.entity

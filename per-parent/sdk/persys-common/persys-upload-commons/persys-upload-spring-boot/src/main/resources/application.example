@@ -1,0 +1,5 @@
+persys:
+  upload:
+    base-url: https://admin.lhstack.xyz
+    oss-client-type: okhttp
+    token: 8aff853a58140f2749b01742xz969ed8421

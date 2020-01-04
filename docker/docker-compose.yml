@@ -1,0 +1,84 @@
+version: '3'
+services:
+  per_sys:
+    build: .
+    image: per_sys
+    container_name: per_sys
+    depends_on:
+      - per_mysql
+      - per_mongo
+      - per_redis
+    hostname: per_sys
+    restart: always
+    environment:
+      LOG_PATH: /logback/v1
+    env_file:
+      - ./env/per-sys.env
+    volumes:
+      - ./per_log:/logback
+      - /etc/localtime:/etc/localtime:ro
+    privileged: true
+#  per_sys1:
+ #   build: .
+  #  image: per_sys
+   # container_name: per_sys1
+   # restart: always
+   # depends_on:
+    #  - per_mysql
+    #  - per_mongo
+    #  - per_redis
+    #hostname: per_sys1
+    #privileged: true
+    #environment:
+    #  LOG_PATH: /logback/v2
+   # env_file:
+   #   - ./env/per-sys.env
+   # volumes:
+    #  - ./per_log:/logback
+    #  - /etc/localtime:/etc/localtime:ro
+  per_mysql:
+    image: mysql:5.7.22
+    container_name: per_mysql
+    command: 
+      - --character-set-server=utf8
+      - --collation-server=utf8_general_ci
+      - --max_connections=3000
+    environment:
+      MYSQL_ROOT_PASSWORD: per_mysql
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql_script:/mysql_script
+    privileged: true
+    ports:
+      - 3306:3306
+    restart: always
+    hostname: per_mysql
+  per_mongo:
+    image: mongo:3.1
+    container_name: per_mongo
+    command: --dbpath /data/db
+    volumes:
+      - ./mongo/data:/data/db
+      - ./mongo_script:/mongo_script
+    privileged: true
+    restart: always
+    hostname: per_mongo
+  per_redis:
+    image: redis
+    command: redis-server
+    container_name: per_redis
+    volumes:
+      - ./redis/data:/data
+    hostname: per_redis
+  nginx:
+    image: nginx
+    container_name: per_nginx
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/configuration:/nginx/configuration
+    depends_on:
+      - per_sys
