@@ -8,44 +8,44 @@ PerSys集成了多种信息监控、内置权限管理，让开发者的注意�
 
 PerSys只需配置环境就可以直接运行，不需要单独下载组件和依赖。
 
-![image-20200104111627655](.\images\image-20200104111627655.png)
+![image-20200104111627655](https://github.com/adrklang/persys/blob/master/images/image-20200104111627655.png)
 
-![image-20200104111748455](.\images\image-20200104111748455.png)
+![image-20200104111748455](https://github.com/adrklang/persys/blob/master/images/image-20200104111748455.png)
 
-![image-20200104111822168](.\images\image-20200104111822168.png)
+![image-20200104111822168](https://github.com/adrklang/persys/blob/master/images/image-20200104111822168.png)
 
-![image-20200104111926281](.\images\image-20200104111926281.png)
+![image-20200104111926281](https://github.com/adrklang/persys/blob/master/images/image-20200104111926281.png)
 
-![image-20200104111950229](.\images\image-20200104111950229.png)
+![image-20200104111950229](https://github.com/adrklang/persys/blob/master/images/image-20200104111950229.png)
 
-![image-20200104112024240](.\images\image-20200104112024240.png)
+![image-20200104112024240](https://github.com/adrklang/persys/blob/master/images/image-20200104112024240.png)
 
-![image-20200104112128267](.\images\image-20200104112128267.png)
+![image-20200104112128267](https://github.com/adrklang/persys/blob/master/images/image-20200104112128267.png)
 
-![image-20200104112301653](.\images\image-20200104112301653.png)
+![image-20200104112301653](https://github.com/adrklang/persys/blob/master/images/image-20200104112301653.png)
 
-![image-20200104112325150](.\images\image-20200104112325150.png)
+![image-20200104112325150](https://github.com/adrklang/persys/blob/master/images/image-20200104112325150.png)
 
-![image-20200104112358538](.\images\image-20200104112358538.png)
+![image-20200104112358538](https://github.com/adrklang/persys/blob/master/images/image-20200104112358538.png)
 
-![image-20200104112437172](.\images\image-20200104112437172.png)
+![image-20200104112437172](https://github.com/adrklang/persys/blob/master/images/image-20200104112437172.png)
 
-![image-20200104112450944](.\images\image-20200104112450944.png)
+![image-20200104112450944](https://github.com/adrklang/persys/blob/master/images/image-20200104112450944.png)
 
-![image-20200104112505478](.\images\image-20200104112505478.png)
+![image-20200104112505478](https://github.com/adrklang/persys/blob/master/images/image-20200104112505478.png)
 
-![image-20200104112517863](.\images\image-20200104112517863.png)
+![image-20200104112517863](https://github.com/adrklang/persys/blob/master/images/image-20200104112517863.png)
 
-![image-20200104112525038](.\images\image-20200104112525038.png)
+![image-20200104112525038](https://github.com/adrklang/persys/blob/master/images/image-20200104112525038.png)
 
-![image-20200104112532589](.\images\image-20200104112532589.png)
+![image-20200104112532589](https://github.com/adrklang/persys/blob/master/images/image-20200104112532589.png)
 
-![image-20200104112539553](.\images\image-20200104112539553.png)
+![image-20200104112539553](https://github.com/adrklang/persys/blob/master/images/image-20200104112539553.png)
 
-![image-20200104112546533](.\images\image-20200104112546533.png)
+![image-20200104112546533](https://github.com/adrklang/persys/blob/master/images/image-20200104112546533.png)
 
-![image-20200104112603904](.\images\image-20200104112603904.png)
+![image-20200104112603904](https://github.com/adrklang/persys/blob/master/images/image-20200104112603904.png)
 
-![image-20200104112610573](.\images\image-20200104112610573.png)
+![image-20200104112610573](https://github.com/adrklang/persys/blob/master/images/image-20200104112610573.png)
 
-![image-20200104112631094](.\images\image-20200104112631094.png)
+![image-20200104112631094](https://github.com/adrklang/persys/blob/master/images/image-20200104112631094.png)
