@@ -22,7 +22,7 @@
     <properties>
         <java.version>1.8</java.version>
         <hutool.version>5.0.3</hutool.version>
-        <fastjson.version>1.2.61</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <spring-boot-admin.version>2.1.5</spring-boot-admin.version>
         <fastdfs.version>0.0.1-LHSTACK</fastdfs.version>
         <fastdfs1.version>1.27-SNAPSHOT</fastdfs1.version>
